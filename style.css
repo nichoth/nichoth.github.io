@@ -40,13 +40,24 @@ a {
   transform: translateY(-50%);
   display: block;
   margin: 0 auto;
+
+  /*a little white*/
+  /*background: linear-gradient(304deg, #f8f292, #07bed8, #fff, #EF4D42, #ffa849, #f8f292);*/
+
+  /*nice magenta*/
   background: linear-gradient(304deg, #f8f292, #07bed8, rgb(253, 87, 144), #ffa849, #f8f292);
+
+  /*no blue*/
   /*background: linear-gradient(304deg, #f8f292, #07bed8, #EF4D42, #ffa849, #f8f292);*/
-  background-size: 100%;
-  /*-webkit-animation: EvilColor 27s ease infinite;
-  -moz-animation: EvilColor 27s ease infinite;
-  -o-animation: EvilColor 27s ease infinite;
-  animation: EvilColor 10s ease infinite;*/
+
+  /*orig*/
+  /*linear-gradient(304deg, #f8f292, #07bed8, #0a5a96, #ef3e32, #ffa849, #f8f292)*/
+
+  background-size: 600%;
+  -webkit-animation: EvilColor 10s ease infinite;
+  -moz-animation: EvilColor 10s ease infinite;
+  -o-animation: EvilColor 10s ease infinite;
+  animation: EvilColor 10cs ease infinite;
 }
 
 .links {
