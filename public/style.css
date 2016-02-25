@@ -1,0 +1,41 @@
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.main-image {
+  height: 80vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.links {
+  text-align: center;
+  font-size: 2em;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 15vh;
+}
+
+.links a {
+  display: inline-block;
+  width: 24%;
+}
+
+.links .active {
+  color: pink;
+}
+
+
+/*
+.top-links a:last-child, .bottom-links a:last-child {
+  float: right;
+  margin-right: 0.5em;
+}
+*/
