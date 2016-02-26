@@ -1,5 +1,31 @@
 body {
-  font-family: Helvetica, sans-serif;
+  font-family: 'Raleway', sans-serif;
+}
+
+#content {
+  text-align: center;
+}
+
+.main-text-top {
+  top: 0;
+}
+
+.main-text.main-text-bottom {
+  bottom: 0;
+  letter-spacing: 0.6em;
+  padding-left: 0.1em;
+}
+
+.main-text {
+  color: #05385F;
+  position: absolute;
+  width: 100%;
+  text-transform: uppercase;
+  z-index: 2;
+  text-align: center;
+  font-size: 25vh;
+  font-weight: 100;
+  letter-spacing: 0.4em;
 }
 
 a {
@@ -29,11 +55,11 @@ a {
 }
 
 .main-image-wrapper {
+  z-index: 1;
   height: 95vh;
 }
 
 .main-image {
-  max-height: 95vh;
   height: 320px;
   position: relative;
   top: 50%;
