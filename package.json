@@ -5,9 +5,11 @@
     ]
   },
   "scripts": {
-    "watch": "watchify lib/main.js -o public/bundle.js -dv",
-    "dev": "ecstatic public",
-    "build": "browserify lib/main.js > public/bundle.js && cp style/main.css public/style.css",
+    "watch": "npm run watch-sass",
+    "watch-sass": "node-sass -w style/static.scss -o public/static & node-sass -w style/motion.scss -o public/motion",
+    "sass": "node-sass style/static.scss > public/static/ && node-sass style/motion.scss > public/motion/",
+    "dev": "npm run watch & ecstatic public",
+    "build": "browserify lib/main.js > public/bundle.js && npm run sass",
     "deploy": "git subtree push --prefix public origin master"
   },
   "dependencies": {
@@ -21,6 +23,7 @@
     "ecstatic": "^1.4.0",
     "handlebars": "^4.0.5",
     "hbsfy": "^2.5.0",
-    "mkdirp": "^0.5.1"
+    "mkdirp": "^0.5.1",
+    "node-sass": "^3.4.2"
   }
 }
