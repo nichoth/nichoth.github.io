@@ -5,7 +5,8 @@
     ]
   },
   "scripts": {
-    "watch": "npm run watch-sass",
+    "watch": "npm run watch-sass & npm run watch-js",
+    "watch-js": "watchify lib/main.js -o public/motion/bundle.js -dv",
     "watch-sass": "node-sass -w style/static.scss -o public/static & node-sass -w style/motion.scss -o public/motion",
     "sass": "node-sass style/static.scss > public/static/ && node-sass style/motion.scss > public/motion/",
     "dev": "npm run watch & ecstatic public",
@@ -13,8 +14,10 @@
     "deploy": "git subtree push --prefix public origin master"
   },
   "dependencies": {
+    "canvas-particles": "0.0.8",
     "catch-links": "^2.0.0",
     "hyperglue": "^2.0.1",
+    "randomcolor": "^0.4.3",
     "routes": "^2.1.0",
     "single-page": "^1.1.0",
     "url-join": "0.0.1"
