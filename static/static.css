@@ -1,5 +1,14 @@
 body {
+  margin: 0;
   font-family: 'Raleway', sans-serif; }
+
+.main-hr {
+  color: #05385F;
+  margin: 0 auto;
+  top: 7em;
+  position: absolute;
+  width: 47%;
+  left: 27%; }
 
 #content {
   text-align: center; }
@@ -13,17 +22,14 @@ body {
   padding-left: 0.1em; }
 
 .main-text {
+  font-family: 'Source Code Pro', sans-serif;
   margin-top: 2em;
   color: #05385F;
   position: absolute;
   width: 100%;
-  text-transform: uppercase;
   z-index: 2;
   text-align: center;
-  font-size: 2em;
-  font-weight: 100;
-  letter-spacing: 0.1em;
-  word-spacing: 0.3em; }
+  font-size: 2em; }
 
 a {
   text-decoration: none;
