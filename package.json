@@ -8,7 +8,7 @@
     "watch": "npm run watch-sass & npm run watch-js",
     "watch-js": "watchify lib/main.js -o public/bundle.js -dv",
     "watch-sass": "node-sass -w style/style.scss -o public",
-    "sass": "node-sass style/style.scss > public/style.scss",
+    "sass": "node-sass style/style.scss > public/style.css",
     "dev": "npm run watch & ecstatic public",
     "build": "browserify lib/main.js > public/bundle.js && npm run sass",
     "deploy": "git subtree push --prefix public origin master"
