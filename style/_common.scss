@@ -3,6 +3,25 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
+.icon-wrapper {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.email {
+  margin-right: 6em;
+  display: inline-block;
+  width: 100px;
+  img { width: 100%; }
+}
+
+.question {
+  font-size: 6em;
+  display: inline-block;
+  position: relative;
+  bottom: 0.2em;
+}
+
 .main-hr {
   color: #05385F;
   margin: 0 auto;
@@ -49,14 +68,14 @@ a {
 
 .main-image-wrapper {
   z-index: 1;
-  height: 95vh;
+  height: 70vh;
 }
 
 .main-image {
   height: 320px;
   position: relative;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-40%);
   display: block;
   margin: 0 auto;
   background: linear-gradient(304deg, #f8f292, #07bed8, rgb(253, 87, 144), #ffa849, #f8f292);
