@@ -6,9 +6,9 @@
   },
   "scripts": {
     "watch": "npm run watch-sass & npm run watch-js",
-    "watch-js": "watchify lib/main.js -o public/motion/bundle.js -dv",
-    "watch-sass": "node-sass -w style/static.scss -o public/static & node-sass -w style/motion.scss -o public/motion",
-    "sass": "node-sass style/static.scss > public/static/ && node-sass style/motion.scss > public/motion/",
+    "watch-js": "watchify lib/main.js -o public/bundle.js -dv",
+    "watch-sass": "node-sass -w style/style.scss -o public",
+    "sass": "node-sass style/style.scss > public/style.scss",
     "dev": "npm run watch & ecstatic public",
     "build": "browserify lib/main.js > public/bundle.js && npm run sass",
     "deploy": "git subtree push --prefix public origin master"
