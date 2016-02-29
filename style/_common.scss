@@ -1,6 +1,5 @@
 $iconColor: #2F596D;
 $iconWidth: 14vh;
-//$iconColor: black;
 
 body {
   margin: 0;
@@ -30,12 +29,13 @@ body {
 }
 
 .email {
-  height: 25vh;
+  height: 20vh;
   svg {
     // connecting lines in the box
     &.depressed {
       line {
-        stroke: pink;
+        /* stroke: pink; */
+        /* display: none; */
       }
     }
     path {

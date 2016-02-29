@@ -14,6 +14,7 @@
     "deploy": "git subtree push --prefix public origin master"
   },
   "dependencies": {
+    "after": "^0.8.1",
     "canvas-particles": "0.0.8",
     "catch-links": "^2.0.0",
     "hyperglue": "^2.0.1",
