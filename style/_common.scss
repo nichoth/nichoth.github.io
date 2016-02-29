@@ -1,4 +1,5 @@
 $iconColor: #2F596D;
+$iconWidth: 14vh;
 //$iconColor: black;
 
 body {
@@ -11,14 +12,32 @@ body {
   margin: 0 auto;
 }
 
-.email {
+.icon-box {
   display: inline-block;
-  width: 7vh;
+  width: $iconWidth;
   min-width: 40px;
-  img { width: 100%; }
   svg {
     width: 100%;
     height: 100%;
+    &.icon-animate {
+      position: absolute;
+    }
+  }
+}
+
+.icon-copy {
+  opacity: 0.4;
+}
+
+.email {
+  height: 25vh;
+  svg {
+    // connecting lines in the box
+    &.depressed {
+      line {
+        stroke: pink;
+      }
+    }
     path {
       stroke-width: 11;
       stroke: $iconColor;
