@@ -20,9 +20,10 @@ body {
   opacity: 0.4; }
 
 .email {
-  height: 25vh; }
+  height: 20vh; }
   .email svg.depressed line {
-    stroke: pink; }
+    /* stroke: pink; */
+    /* display: none; */ }
   .email svg path {
     stroke-width: 11;
     stroke: #2F596D; }
