@@ -29,6 +29,17 @@ body {
 }
 
 .email {
+  #front-square {
+    transition: fill-opacity 0.20s;
+  }
+  &:hover {
+    #front-square {
+      fill-opacity: 1;
+    }
+  }
+}
+
+.email {
   height: 20vh;
   svg {
     // connecting lines in the box
