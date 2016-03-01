@@ -78,6 +78,9 @@ a {
 .main-image-wrapper {
   z-index: 1;
   height: 70vh; }
+  .main-image-wrapper a {
+    display: inline-block;
+    height: 100%; }
 
 .main-image {
   height: 70%;
