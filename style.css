@@ -19,6 +19,12 @@ body {
 .icon-copy {
   opacity: 0.4; }
 
+.email #front-square {
+  transition: fill-opacity 0.20s; }
+
+.email:hover #front-square {
+  fill-opacity: 1; }
+
 .email {
   height: 20vh; }
   .email svg.depressed line {
