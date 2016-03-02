@@ -114,17 +114,18 @@ a {
   height: 70vh;
   a {
     display: inline-block;
-    height: 100%;
+    height: 70%;
+    overflow: hidden;
+    position: relative;
+    top: 50%;
+    transform: translateY(-40%);
   }
 }
 
 .main-image {
   //transition: all 0.5s;
-  height: 70%;
+  height: 100.1%;
   max-height: 350px;
-  position: relative;
-  top: 50%;
-  transform: translateY(-40%);
   display: block;
   margin: 0 auto;
   background: linear-gradient(304deg, #f8f292, #07bed8, rgb(253, 87, 144), #ffa849, #f8f292);
