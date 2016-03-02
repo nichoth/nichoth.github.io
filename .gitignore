@@ -87,4 +87,5 @@ node_modules
 .sass-cache/
 *.css.map
 
-
+public/bundle.js
+public/style.css
