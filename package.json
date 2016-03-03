@@ -8,7 +8,7 @@
     "watch": "npm run watch-sass & npm run watch-js",
     "watch-js": "watchify lib/main.js -o public/bundle.js -dv",
     "watch-sass": "node-sass -w style/style.scss -o public",
-    "sass": "node-sass style/style.scss > public/style.css",
+    "sass": "node-sass --include-path node_modules/bourbon/app/assets/stylesheets --include-path node_modules/bourbon-neat/app/assets/stylesheets style/style.scss > public/style.css",
     "dev": "npm run watch & ecstatic public",
     "build": "browserify lib/main.js > public/bundle.js && npm run sass",
     "deploy": "npm run build && surge public"
@@ -28,6 +28,7 @@
     "handlebars": "^4.0.5",
     "hbsfy": "^2.5.0",
     "mkdirp": "^0.5.1",
+    "node-neat": "^1.7.2",
     "node-sass": "^3.4.2"
   }
 }
