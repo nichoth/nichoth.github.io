@@ -10,7 +10,10 @@
     "watch-sass": "node-sass -w style/style.scss -o public",
     "sass": "node-sass --include-path node_modules/bourbon/app/assets/stylesheets --include-path node_modules/bourbon-neat/app/assets/stylesheets style/style.scss > public/style.css",
     "dev": "npm run watch & ecstatic public",
-    "build": "browserify lib/main.js > public/bundle.js && npm run sass",
+    "buildjs": "browserify lib/main.js > public/bundle.js && npm run sass",
+    "copy": "cp -r src/CNAME src/assets public",
+    "clean": "rm -rf public/*",
+    "build": "npm run buildjs && npm run sass && gulp templates && npm run copy",
     "deploy": "npm run build && surge public"
   },
   "dependencies": {
@@ -25,10 +28,14 @@
   },
   "devDependencies": {
     "ecstatic": "^1.4.0",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
     "handlebars": "^4.0.5",
     "hbsfy": "^2.5.0",
+    "hyperstream": "^1.2.2",
     "mkdirp": "^0.5.1",
     "node-neat": "^1.7.2",
-    "node-sass": "^3.4.2"
+    "node-sass": "^3.4.2",
+    "through2": "^2.0.1"
   }
 }
