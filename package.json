@@ -27,6 +27,7 @@
     "url-join": "0.0.1"
   },
   "devDependencies": {
+    "concat-stream": "^1.5.1",
     "ecstatic": "^1.4.0",
     "gulp": "^3.9.1",
     "gulp-rename": "^1.2.2",
