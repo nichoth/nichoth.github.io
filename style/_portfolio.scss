@@ -2,32 +2,97 @@ $little: new-breakpoint(max-width 600px 12);
 
 %span4 {
   @include span-columns(4);
+}
+
+%auto4 {
+  @include omega(4n);
+}
+
+%auto2 {
   @include omega(2n);
+}
+
+%omega {
+  @include omega();
+}
+
+%span8 {
+  @include span-columns(8);
 }
 
 %grid-container {
   @include outer-container;
 }
 
-.portfolio-list {
-  @extend %grid-container;
-  padding: 1em;
+// .portfolio-list {
+//   @extend %grid-container;
+//   padding: 1em;
+// }
+
+// .portfolio-item {
+//   @extend %span4;
+//   &:nth-child(2n+1) {
+//     @include shift(2);
+//   }
+//   @include media($little) {
+//     @include span-columns(12);
+//     &:nth-child(2n+1) {
+//       margin-left: 0 !important;
+//     }
+//   }
+//   padding: 1em;
+//   margin-bottom: 4em;
+//   height: 10em;
+//   display: block;
+//   background-color: gray;
+// }
+
+%img {
+  max-width: 100%;
+}
+
+section.portfolio {
+  text-align: left;
+  margin-top: 8em;
+  padding: 0 1em;
 }
 
 .portfolio-item {
-  @extend %span4;
-  &:nth-child(2n+1) {
-    @include shift(2);
+  @extend %clearfix;
+  @extend %grid-container;
+}
+
+.portfolio-item {
+  max-width: 100%;
+
+  h2, h3 {
+    font-weight: 300;
+    margin: 0;
   }
-  @include media($little) {
-    @include span-columns(12);
-    &:nth-child(2n+1) {
-      margin-left: 0 !important;
+
+  h2 {
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    margin-top: -0.5em;
+    font-weight: normal;
+  }
+
+  &>div {
+    @extend %auto2;
+    float: left;
+  }
+
+  .portfolio-thumb {
+    @extend %span4;
+    img {
+      @extend %img;
     }
   }
-  padding: 1em;
-  margin-bottom: 4em;
-  height: 10em;
-  display: block;
-  background-color: gray;
+
+  .portfolio-item-text {
+    @extend %span8;
+  }
 }

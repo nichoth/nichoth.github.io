@@ -49,7 +49,7 @@ gulp.task('template', function(done) {
 
   index.on('finish', next);
 
-  var s = gulp.src('src/content/portfolio/*.json')
+  var portfolio = gulp.src('src/content/portfolio/*.json')
     .pipe(gulpHyperstream(
       __dirname+'/src/layouts/portfolio-item.html',
       (data) => {
@@ -85,7 +85,7 @@ gulp.task('template', function(done) {
 });
 
 // buffer all the src files, then call cb with a stream of all the source
-// streams merged together
+// files merged together
 function gulpAggregate(filename, cb) {
   return concat(function onEnd(data) {
     var v = source(filename);
