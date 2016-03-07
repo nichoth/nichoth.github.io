@@ -5,9 +5,10 @@
     ]
   },
   "scripts": {
-    "watch": "npm run watch-sass & npm run watch-js",
+    "watch": "npm run watch-sass & npm run watch-js & gulp watch",
     "watch-js": "watchify lib/main.js -o public/bundle.js -dv",
     "watch-sass": "node-sass --include-path node_modules/bourbon/app/assets/stylesheets --include-path node_modules/bourbon-neat/app/assets/stylesheets -w style/style.scss -o public",
+    "watch-html": "gulp watch",
     "sass": "node-sass --include-path node_modules/bourbon/app/assets/stylesheets --include-path node_modules/bourbon-neat/app/assets/stylesheets style/style.scss > public/style.css",
     "dev": "npm run watch & ecstatic public",
     "buildjs": "browserify lib/main.js > public/bundle.js && npm run sass",
@@ -40,10 +41,12 @@
     "mkdirp": "^0.5.1",
     "node-neat": "^1.7.2",
     "node-sass": "^3.4.2",
+    "stream-combiner": "^0.2.2",
     "through2": "^2.0.1",
     "vinyl": "^1.1.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
+    "vinyl-transform": "^1.0.0",
     "xtend": "^4.0.1"
   }
 }

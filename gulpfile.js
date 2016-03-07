@@ -1,4 +1,7 @@
 var gulp = require('gulp');
+var combine = require('stream-combiner');
+var source = require('vinyl-source-stream');
+var transform = require('vinyl-transform');
 var after = require('after');
 var xtend = require('xtend');
 var from = require('from2');
@@ -9,6 +12,7 @@ var rename = require('gulp-rename');
 var fs = require('fs');
 var through = require('through2');
 var hyperstream = require('hyperstream');
+var rs = fs.createReadStream;
 
 function gulpHyperstream(path, mapper) {
   return through.obj(function(file, _, next) {
@@ -25,6 +29,8 @@ function gulpHyperstream(path, mapper) {
 }
 
 gulp.task('template', function(done) {
+  var next = after(2, done);
+
   var index = gulp.src('src/content/*.html')
     .pipe(gulpHyperstream(__dirname+'/src/layouts/index.html', (html) => {
       return {
@@ -36,10 +42,12 @@ gulp.task('template', function(done) {
     .pipe(rename((path) => {
       if (path.basename === 'index') return;
       path.dirname = path.basename;
-      path.basename = 'index'
+      path.basename = 'index';
     }))
     .pipe(gulp.dest('public'))
   ;
+
+  index.on('finish', next);
 
   var s = gulp.src('src/content/portfolio/*.json')
     .pipe(gulpHyperstream(
@@ -52,7 +60,7 @@ gulp.task('template', function(done) {
         };
       })
     )
-    .pipe(gulpAggregate((stream) => {
+    .pipe(gulpAggregate('portfolio/index.html', (stream) => {
       stream.pipe(gulpHyperstream(
         __dirname+'/src/layouts/portfolio.html', (html) => {
           return {
@@ -68,23 +76,27 @@ gulp.task('template', function(done) {
           };
         }
       ))
-      .pipe(rename(function(path) {
-        path.dirname = 'portfolio';
-        path.basename = 'index';
-        path.extname = '.html';
-      }))
       .pipe(gulp.dest('public'));
-    }));
+
+      stream.on('finish', next);
+    }))
+  ;
+
 });
 
-function gulpAggregate(cb) {
+// buffer all the src files, then call cb with a stream of all the source
+// streams merged together
+function gulpAggregate(filename, cb) {
   return concat(function onEnd(data) {
-    var v = data[0].clone();
+    var v = source(filename);
     var merged = merge();
     data.forEach((d) => merged.add(d.contents));
-    v.contents = merged;
-    var stream = through.obj((file, _, next) => next(null, file));
-    cb(stream);
-    stream.write(v);
+    merged.pipe(v);
+    cb(v);
   });
 }
+
+
+gulp.task('watch', function() {
+  return gulp.watch(['src/content/**/*', 'src/layouts/**/*'], ['template']);
+});
