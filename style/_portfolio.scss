@@ -1,0 +1,33 @@
+$little: new-breakpoint(max-width 600px 12);
+
+%span4 {
+  @include span-columns(4);
+  @include omega(2n);
+}
+
+%grid-container {
+  @include outer-container;
+}
+
+.portfolio-list {
+  @extend %grid-container;
+  padding: 1em;
+}
+
+.portfolio-item {
+  @extend %span4;
+  &:nth-child(2n+1) {
+    @include shift(2);
+  }
+  @include media($little) {
+    @include span-columns(12);
+    &:nth-child(2n+1) {
+      margin-left: 0 !important;
+    }
+  }
+  padding: 1em;
+  margin-bottom: 4em;
+  height: 10em;
+  display: block;
+  background-color: gray;
+}
