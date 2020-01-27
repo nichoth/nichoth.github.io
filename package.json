@@ -24,7 +24,7 @@
     "url-join": "0.0.1"
   },
   "devDependencies": {
-    "ecstatic": "^1.4.0",
+    "ecstatic": "^4.1.2",
     "handlebars": "^4.0.5",
     "hbsfy": "^2.5.0",
     "mkdirp": "^0.5.1",
